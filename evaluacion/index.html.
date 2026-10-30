@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<title>Evaluación de Perfil Laboral · Vital Care</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<style>
+/* Layout: banda verde petróleo con el logo, filetes dorados arriba y abajo (como las piezas de Canva), tarjeta crema central de 720px; una consigna por pantalla */
+:root{
+  color-scheme:light;
+  --cream:#f6f3ec; --paper:#fffdf8; --teal:#005753; --teal-2:#1d5b57; --sage:#b0d9ca; --sage-soft:#e4f1ec;
+  --gold:#c8a26b; --gold-soft:#f3e9d8; --ink:#1d3b38; --muted:#5f6f6b; --line:#e4dccd; --danger:#a3302b;
+  --q-d:#02574f; --q-i:#b2dbcb; --q-s:#74b282; --q-c:#108e86;
+  --font:"Arial Nova", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--cream)}
+body{background:var(--cream);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;margin:0}
+.goldbar{height:10px;background:var(--gold)}
+.band{background:var(--teal);color:var(--cream)}
+.band-in{max-width:760px;margin:0 auto;padding-block:18px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.band img{height:58px;width:auto;display:block;max-width:100%}
+.band .who{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);text-align:right}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px}
+.card+.card{margin-top:18px}
+@media (max-width:480px){.card{padding:20px}.band img{height:46px}.band .who{text-align:left}}
+h1,h2,h3{margin:0;color:var(--teal-2);font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:30px;line-height:1.12}
+h2{font-size:23px;line-height:1.2}
+h3{font-size:17px}
+p{margin:0}
+.rule{width:64px;height:4px;background:var(--gold);border-radius:2px}
+.stack{display:flex;flex-direction:column;gap:16px}
+.stack-sm{display:flex;flex-direction:column;gap:8px}
+.muted{color:var(--muted)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.preview{background:var(--gold-soft);border:1px solid var(--gold);color:var(--ink);border-radius:6px;padding:10px 14px;font-size:14px;margin-bottom:18px}
+.progress{height:6px;background:var(--sage-soft);border-radius:4px;overflow:hidden}
+.progress>i{display:block;height:100%;background:var(--teal);transition:width .3s}
+.meta-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);gap:12px;flex-wrap:wrap}
+label.field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700;color:var(--teal-2)}
+input[type=text],input[type=email],textarea,select{font:inherit;font-weight:400;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:4px;padding:11px 12px;width:100%}
+textarea{min-height:90px;resize:vertical;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;word-break:break-all}
+input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ink)}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--teal);flex:0 0 auto}
+button{font:inherit;cursor:pointer}
+.btn{border:0;border-radius:4px;padding:13px 24px;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:var(--teal);color:var(--cream)}
+.btn:hover{background:var(--teal-2)}
+.btn.ghost{background:transparent;color:var(--teal);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--teal)}
+.btn.small{padding:9px 14px;font-size:12px}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.err{color:var(--danger);font-size:14px;min-height:20px}
+.q{font-size:21px;line-height:1.35;font-weight:700;color:var(--teal-2)}
+.hint{font-size:14px;color:var(--muted)}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;width:100%;padding:14px 16px;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:16px;line-height:1.4}
+.opt:hover{border-color:var(--teal)}
+.opt .rk{flex:0 0 34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:700;border:1.5px dashed var(--gold);color:var(--gold);font-size:15px}
+.opt.on{background:var(--sage-soft);border-color:var(--sage)}
+.opt.on .rk{border:0;background:var(--teal);color:var(--cream)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.tri{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.tri.sel{background:var(--sage-soft);border-color:var(--sage)}
+.seg{display:flex;gap:6px}
+.seg button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:4px;padding:8px 13px;font-size:14px;font-weight:700}
+.seg button.on{background:var(--teal);border-color:var(--teal);color:var(--cream)}
+.seg button.on.less{background:var(--gold);border-color:var(--gold);color:#2b220f}
+@media (max-width:480px){.tri{grid-template-columns:1fr}}
+.lk{display:flex;flex-direction:column;gap:10px;padding:16px 0;border-top:1px solid var(--line)}
+.lk:first-child{border-top:0;padding-top:0}
+.lk .scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.lk .scale button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:4px;padding:10px 2px;font-size:13px}
+.lk .scale button.on{background:var(--teal);border-color:var(--teal);color:var(--cream);font-weight:700}
+.lk.missing .scale button{border-color:var(--danger)}
+.codebox{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:var(--sage-soft);border-radius:4px;padding:12px;word-break:break-all;user-select:all;color:var(--ink)}
+.contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:14px}
+.contact span:nth-child(odd){color:var(--muted)}
+.center{text-align:center;align-items:center}
+.seal{width:88px;height:88px;border-radius:50%;background:var(--teal);display:grid;place-items:center;margin:0 auto}
+.seal svg{display:block}
+footer.foot{background:var(--teal);color:var(--sage)}
+.foot-in{max-width:760px;margin:0 auto;padding-block:22px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+.foot .motto{color:var(--cream);font-weight:700;font-size:14px}
+.foot-col{display:flex;flex-direction:column;gap:4px;min-width:0}
+.foot-name{color:var(--cream)}
+.foot-contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:3px 12px;margin:0;font-size:13px}
+.foot-contact dt{color:var(--sage);opacity:.8}
+.foot-contact dd{margin:0;color:var(--cream);overflow-wrap:anywhere}
+.foot-contact a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--gold)}
+/* informe */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:14px;margin:0}
+.kv dt{color:var(--muted)} .kv dd{margin:0;font-variant-numeric:tabular-nums}
+.chart{width:100%;height:auto;display:block;max-width:620px;margin:0 auto}
+.alert{padding:12px 14px;border-radius:4px;background:var(--gold-soft);border-left:4px solid var(--gold);font-size:14px}
+.ok{padding:12px 14px;border-radius:4px;background:var(--sage-soft);border-left:4px solid var(--teal);font-size:14px}
+.alert,.ok{border-radius:0}
+.conv{border-left:3px solid var(--gold);padding:4px 0 4px 14px}
+.conv .tag{font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.puesto{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.puesto label{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:130px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:14px}
+.bar .t{height:10px;background:var(--sage-soft);border-radius:5px;overflow:hidden}
+.bar .t i{display:block;height:100%;border-radius:5px}
+.bar b{text-align:right;font-variant-numeric:tabular-nums}
+.tabnum{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="goldbar"></div>
+<header class="band"><div class="band-in">
+  <img id="logo" alt="Vital Care · Espacio de Evaluaciones Diagnósticas" src="">
+  <div class="who">Lic. Noelia B. Poy<br>Evaluaciones diagnósticas</div>
+</div></header>
+<div class="wrap">
+  <div id="previewNote" class="preview" hidden>Vista previa del diseño. En el sistema real, el candidato entra solo con la invitación que le llega por correo, y sus respuestas te llegan solas a vitalcare.evaluaciones@gmail.com.</div>
+  <main id="app" aria-live="polite"></main>
+</div>
+<footer class="foot"><div class="foot-in">
+  <div class="foot-col">
+    <span class="motto">Evaluar para comprender, comprender para cuidar.</span>
+    <span class="foot-name">Lic. Noelia Belén Poy · Mat. Prof. 7663</span>
+    <span>San José 1672, 1° piso, Of. 37 · Funes, Santa Fe</span>
+  </div>
+  <dl class="foot-contact">
+    <dt>WhatsApp</dt><dd>341 350-8828</dd>
+    <dt>Correo</dt><dd>vitalcare.evaluaciones@gmail.com</dd>
+    <dt>Instagram</dt><dd>@vitalcare.diagnostico</dd>
+    <dt>Web</dt><dd><a href="https://vitalcare-diagnostico.com">vitalcare-diagnostico.com</a></dd>
+  </dl>
+</div></footer>
+<div class="goldbar"></div>
+
+<script>
+const CONFIG = {"MODO": "web", "API": "https://script.google.com/macros/s/AKfycbzLiHvS13vyb8CrgstDd9mgn9az_N-2fkQyiqyxsrnrhv633XOjEIwqoqRuUpNQP-RUFA/exec", "LOGO": "../logo_principal.png"};
+document.getElementById('logo').src = CONFIG.LOGO;
+function __main(DATA, PRE){
+var R=null;
+/*@B+*/
+const ALPH='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+const F=['D','I','S','C'];
+const L4=['OR','FO','IN','DL'];
+const LIK=['Nada','Poco','Algo','Bastante','Mucho'];
+const PERMS=(()=>{const out=[];const go=(a,rest)=>{if(!rest.length){out.push(a);return}rest.forEach((x,i)=>go(a.concat(x),rest.filter((_,j)=>j!==i)))};go([],[4,3,2,1]);return out})();
+const PAIRS=[[0,1],[0,2],[1,0],[1,2],[2,0],[2,1]];
+const BPAGE=6, NB=DATA.imlB.length, ND=DATA.disc.length, NA=DATA.imlA.length, NL=DATA.lidA.length, NLB=DATA.lidB.length;
+const sum=s=>ALPH[[...s].reduce((a,c)=>a+c.charCodeAt(0),0)%64];
+/*@B-*/
+
+const BP=Math.ceil(NB/BPAGE), LBP=Math.ceil(NLB/BPAGE);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const $=s=>document.querySelector(s);
+const app=$('#app');
+const PREVIEW=CONFIG.MODO==='vista', WEB=CONFIG.MODO==='web';
+let Q=new URLSearchParams(), INV='', MODE='evaluado', KEY='vc-perfil-preview';
+function setParams(p){p=p||{};Q=new URLSearchParams(p);INV=String(p.inv||'').toUpperCase().replace(/[^A-Z0-9]/g,'');MODE=(p.id&&p.k)?'informe':'evaluado';KEY='vc-perfil-'+(INV||'preview')}
+
+/* ---------- estado del evaluado ---------- */
+function fresh(){return{step:'inicio',i:0,nombre:'',puesto:'',email:'',consent:false,
+ dOrder:DATA.disc.map(()=>shuffle(F)),disc:DATA.disc.map(()=>null),
+ aOrder:DATA.imlA.map(()=>shuffle([0,1,2])),imlA:DATA.imlA.map(()=>null),
+ bOrder:shuffle([...Array(NB).keys()]),imlB:Array(NB).fill(null),
+ lOrder:DATA.lidA.map(()=>shuffle(L4)),lid:DATA.lidA.map(()=>null),
+ lbOrder:shuffle([...Array(NLB).keys()]),lidB:Array(NLB).fill(null),
+ t:{d0:0,d1:0,i0:0,i1:0,l0:0,l1:0},code:'',sent:false}}
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.dOrder&&s.dOrder.length===ND&&s.lOrder&&s.lOrder.length===NL)return s}catch(e){}return null}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+let S=fresh();
+let tmp=null, sending=false, sendErr='', invInfo=null, gate='cargando';
+
+const TOTAL=1+ND+1+NA+BP+1+NL+LBP;
+function pos(){const b=2+ND+NA+BP;switch(S.step){case'inicio':return 0;case'disc':return 1+S.i;case'trans':return 1+ND;case'imlA':return 2+ND+S.i;case'imlB':return 2+ND+NA+S.i;case'trans2':return b;case'lidA':return b+1+S.i;case'lidB':return b+1+NL+S.i;default:return TOTAL}}
+const rankKeys=()=>S.step==='lidA'?L4:F;
+function bar(label){const p=Math.round(pos()/TOTAL*100);return `<div class="stack-sm"><div class="meta-row"><span>${label}</span><span class="tabnum">${p}%</span></div><div class="progress" role="progressbar" aria-label="Avance" aria-valuenow="${p}" aria-valuemin="0" aria-valuemax="100"><i style="width:${p}%"></i></div></div>`}
+
+function renderCandidate(){
+ if(gate!=='ok'){app.innerHTML=vGate();return}
+ const v={inicio:vInicio,disc:vDisc,trans:vTrans,imlA:vImlA,imlB:vImlB,trans2:vTrans2,lidA:vLidA,lidB:vLidB,fin:vFin,demo:vDemoReport}[S.step]||vInicio;
+ app.innerHTML=v();window.scrollTo({top:0});
+}
+const GATE={
+ cargando:['Un momento','Estamos verificando tu invitación.'],
+ sin:['Acceso solo por invitación','Esta evaluación se realiza con una invitación personal de Vital Care. Si estás participando de un proceso de selección, usá el link que te enviaron.'],
+ no_existe:['Invitación no válida','No encontramos esta invitación. Revisá que el link esté completo o pedí uno nuevo a quien te lo envió.'],
+ completada:['Evaluación ya completada','Esta invitación ya fue utilizada. Tus respuestas fueron recibidas por Vital Care. ¡Gracias!'],
+ vencida:['Invitación vencida','El plazo de esta invitación terminó. Si todavía necesitás completar la evaluación, pedí un link nuevo.'],
+ anulada:['Invitación no disponible','Esta invitación fue desactivada. Consultá con quien te la envió.'],
+ red:['No pudimos conectarnos','Revisá tu conexión a internet y volvé a cargar la página.']};
+function vGate(){const [t,d]=GATE[gate]||GATE.sin;return `<section class="card stack center"><div class="seal" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="9" y="18" width="22" height="16" rx="2" fill="none" stroke="#b0d9ca" stroke-width="2"/><path d="M14 18v-5a6 6 0 0 1 12 0v5" fill="none" stroke="#b0d9ca" stroke-width="2"/></svg></div><h2>${t}</h2><div class="rule"></div><p class="muted" style="max-width:46ch">${d}</p><div class="contact" style="text-align:left"><span>WhatsApp</span><span>341 350-8828</span><span>Correo</span><span>vitalcare.evaluaciones@gmail.com</span></div></section>`}
+function vInicio(){return `<section class="card stack">
+ <span class="eyebrow">Evaluación de perfil laboral</span>
+ <h1>${invInfo&&invInfo.nombre?'Hola, '+esc(String(invInfo.nombre).split(' ')[0])+'. ':''}Te invitamos a conocer cómo trabajás y qué te impulsa</h1>
+ <div class="rule"></div>
+ <p class="muted">La evaluación tiene tres partes y lleva unos 35 minutos. No hay respuestas correctas ni incorrectas. Respondé pensando en cómo sos habitualmente en el trabajo.</p>
+ <p class="hint" style="font-size:13px">Aclaración: si se corta la conexión, al volver a abrir el link retomás donde quedaste.</p>
+ <div class="contact"><span>Parte 1</span><span>Cómo actuás en el trabajo · 24 situaciones · 8 min</span><span>Parte 2</span><span>Lo que te impulsa en el trabajo · 48 frases · 15 min</span><span>Parte 3</span><span>Cómo conducís y acompañás a otros · 36 ítems · 12 min</span>${invInfo&&invInfo.puesto?`<span>Proceso</span><span>${esc(invInfo.puesto)}</span>`:''}</div>
+ <div class="stack-sm">
+  <label class="field" for="fNombre">Nombre y apellido<input type="text" id="fNombre" autocomplete="name" value="${esc(S.nombre)}" placeholder="María Fernández"></label>
+  ${invInfo&&invInfo.puesto?'':`<label class="field" for="fPuesto">Puesto o búsqueda<input type="text" id="fPuesto" value="${esc(S.puesto)}" placeholder="Analista de compras"></label>`}
+  <label class="field" for="fEmail">Correo electrónico (opcional)<input type="email" id="fEmail" autocomplete="email" value="${esc(S.email)}" placeholder="maria@correo.com"></label>
+ </div>
+ <label class="check" for="fConsent"><input type="checkbox" id="fConsent" ${S.consent?'checked':''}><span>Acepto participar. Mis respuestas se usan solo para esta evaluación, las analiza únicamente la Lic. Noelia B. Poy (Mat. Prof. 7663) y se tratan de forma confidencial según la Ley 25.326 de Protección de Datos Personales.</span></label>
+ <p class="err" id="err"></p>
+ <div class="nav"><span></span><button class="btn" data-act="start" id="bStart">Comenzar</button></div>
+</section>`}
+function vDisc(){return vRank(DATA.disc,S.dOrder,S.disc,'Parte 1 de 3 · Cómo actuás en el trabajo',ND,'Terminar parte 1')}
+function vLidA(){return vRank(DATA.lidA,S.lOrder,S.lid,'Parte 3 de 3 · Cómo conducís',NL,'Siguiente')}
+function vRank(items,order,store,label,n,lastLabel){const i=S.i,it=items[i];if(!tmp)tmp=store[i]?{...store[i]}:{};
+ const next=4-Object.keys(tmp).length;
+ const opts=order[i].map(f=>{const r=tmp[f];return `<button class="opt ${r?'on':''}" data-act="rank" data-f="${f}" id="o${f}"><span class="rk">${r||''}</span><span>${esc(it[f])}</span></button>`}).join('');
+ return `<section class="card stack">${bar(label)}
+ <span class="eyebrow">Situación ${i+1} de ${n}</span>
+ <p class="q">${esc(it.p)}</p>
+ <p class="hint">${next>0?`Tocá las opciones en orden, empezando por la que <b>más</b> te representa. Siguiente número: <b>${next}</b>.`:'Listo. Podés seguir o rehacer el orden.'}</p>
+ <div class="opts">${opts}</div>
+ <div class="legend"><span>4 = más me representa</span><span>1 = menos me representa</span><button class="btn ghost small" data-act="reRank">Rehacer orden</button></div>
+ <p class="err" id="err"></p>
+ <div class="nav"><button class="btn ghost" data-act="back">Anterior</button><button class="btn" data-act="rankNext">${i===n-1?lastLabel:'Siguiente'}</button></div></section>`}
+function vTrans2(){return `<section class="card stack">${bar('Parte 2 completa')}
+ <span class="eyebrow">Parte 3 de 3</span><h2>Cómo conducís y acompañás a otros</h2><div class="rule"></div>
+ <p class="muted">Vas a ver situaciones de coordinación de equipos, con cuatro formas de responder: ordenalas del 4 al 1 como en la parte 1. Después, frases para indicar cuánto te identifican.</p>
+ <p class="muted">Si hoy no tenés personas a cargo, respondé pensando en cómo actuarías, o en situaciones en las que te tocó guiar a otros (un proyecto, una capacitación, un grupo).</p>
+ <div class="nav"><button class="btn ghost" data-act="back">Anterior</button><button class="btn" data-act="toL">Continuar</button></div></section>`}
+function vTrans(){return `<section class="card stack">${bar('Parte 1 completa')}
+ <span class="eyebrow">Parte 2 de 3</span><h2>Lo que te impulsa en el trabajo</h2><div class="rule"></div>
+ <p class="muted">Ahora vas a ver frases sobre lo que valorás en un trabajo. Primero, grupos de tres frases: elegí la que <b>más</b> y la que <b>menos</b> te representa. Después, frases sueltas para indicar cuánto te identifican.</p>
+ <div class="nav"><button class="btn ghost" data-act="back">Anterior</button><button class="btn" data-act="toA">Continuar</button></div></section>`}
+function vImlA(){const i=S.i,it=DATA.imlA[i],a=S.imlA[i]||{};
+ const rows=S.aOrder[i].map(k=>{const txt=it.o[k][1];return `<div class="tri ${a.m===k||a.l===k?'sel':''}"><span>${esc(txt)}</span><div class="seg" role="group" aria-label="${esc(txt)}"><button class="${a.m===k?'on':''}" data-act="triM" data-k="${k}">Más</button><button class="${a.l===k?'on less':''}" data-act="triL" data-k="${k}">Menos</button></div></div>`}).join('');
+ return `<section class="card stack">${bar('Parte 2 de 3 · Lo que te impulsa')}
+ <span class="eyebrow">Grupo ${i+1} de ${NA}</span><p class="q">${esc(it.p)}</p>
+ <p class="hint">Elegí una frase como <b>Más</b> y otra distinta como <b>Menos</b>.</p>
+ <div class="stack-sm">${rows}</div><p class="err" id="err"></p>
+ <div class="nav"><button class="btn ghost" data-act="back">Anterior</button><button class="btn" data-act="aNext">Siguiente</button></div></section>`}
+function vImlB(){return vLik(DATA.imlB,S.bOrder,S.imlB,BP,'Parte 2 de 3 · Lo que te impulsa','Terminar parte 2')}
+function vLidB(){return vLik(DATA.lidB,S.lbOrder,S.lidB,LBP,'Parte 3 de 3 · Cómo conducís','Finalizar y enviar')}
+function vLik(list,order,vals,pages,label,lastLabel){const p=S.i,ids=order.slice(p*BPAGE,p*BPAGE+BPAGE);
+ const rows=ids.map(k=>`<div class="lk" id="lk${k}"><span>${esc(list[k][2])}</span><div class="scale" role="group" aria-label="${esc(list[k][2])}">${LIK.map((l,v)=>`<button class="${vals[k]===v?'on':''}" data-act="lik" data-k="${k}" data-v="${v}">${l}</button>`).join('')}</div></div>`).join('');
+ return `<section class="card stack">${bar(label)}
+ <span class="eyebrow">Frases · página ${p+1} de ${pages}</span><p class="hint">¿Cuánto te identifica cada frase?</p>
+ <div>${rows}</div><p class="err" id="err"></p>
+ <div class="nav"><button class="btn ghost" data-act="back">Anterior</button><button class="btn" data-act="likNext">${p===pages-1?lastLabel:'Siguiente'}</button></div></section>`}
+function vFin(){
+ const nombre=S.nombre?esc(S.nombre.split(' ')[0]):'';
+ if(sending)return `<section class="card stack center"><div class="seal" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><circle cx="20" cy="20" r="12" fill="none" stroke="#b0d9ca" stroke-width="3" stroke-dasharray="20 60"/></svg></div><h2>Enviando tus respuestas…</h2><p class="muted">No cierres esta ventana.</p></section>`;
+ if(!S.sent&&!PREVIEW)return `<section class="card stack center"><h2>No pudimos enviar tus respuestas</h2><div class="rule"></div><p class="muted">${esc(sendErr||'Hubo un problema de conexión.')} Tus respuestas siguen guardadas en este dispositivo.</p><button class="btn" data-act="resend">Reintentar envío</button>
+  <details style="text-align:left;width:100%"><summary class="hint">Si el problema continúa</summary><div class="stack-sm" style="margin-top:10px"><p class="hint">Copiá este código y envialo por WhatsApp al 341 350-8828 o a vitalcare.evaluaciones@gmail.com.</p><div class="codebox" id="code">${esc(S.code)}</div><button class="btn ghost small" data-act="copy">Copiar código</button><span class="hint" id="copyMsg"></span></div></details></section>`;
+ return `<section class="card stack center">${bar('Evaluación completa')}
+ <div class="seal" aria-hidden="true"><svg width="44" height="44" viewBox="0 0 44 44"><path d="M11 23l8 8 15-17" fill="none" stroke="#b0d9ca" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+ <h2>¡Gracias${nombre?', '+nombre:''}! Terminaste la evaluación</h2><div class="rule"></div>
+ <p class="muted" style="max-width:48ch">Tus respuestas fueron enviadas a Vital Care. La Lic. Noelia B. Poy las analizará como parte del proceso. Ya podés cerrar esta ventana.</p>
+ ${PREVIEW?`<button class="btn ghost" data-act="demo">Ver el informe que recibe la profesional</button>`:''}</section>`}
+function vDemoReport(){if(!R||R.code!==S.code.replace(/\s+/g,''))R={...decode(S.code),ficha:{LO:80,ES:50,AU:50,VI:50,DE:20,PR:20}};return `<section class="card stack"><span class="eyebrow">Vista previa</span><p class="hint">Así se ve el informe que te llega al correo con el link «Ver informe completo».</p><button class="btn ghost small" data-act="restart" style="align-self:flex-start">Volver a empezar la vista previa</button><p class="hint">La ficha del puesto de este ejemplo está precargada; en el sistema real la completás al crear la invitación.</p></section>`+reportHtml(R)}
+
+function err(m){const e=$('#err');if(e)e.textContent=m}
+function go(step,i=0){S.step=step;S.i=i;tmp=null;save();renderCandidate()}
+const now=()=>Math.round(Date.now()/1000);
+
+app.addEventListener('input',e=>{const id=e.target.id;
+ if(id==='fNombre')S.nombre=e.target.value;if(id==='fPuesto')S.puesto=e.target.value;if(id==='fEmail')S.email=e.target.value;
+ if(['fNombre','fPuesto','fEmail'].includes(id)){err('');save()}});
+app.addEventListener('change',e=>{if(e.target.id==='fConsent'){S.consent=e.target.checked;err('');save()}
+ const m=e.target.dataset&&e.target.dataset.m;if(m&&R){R.ficha[m]=e.target.value;rerenderReport()}});
+app.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;
+ if(a==='start'){if(!S.nombre.trim())return err('Escribí tu nombre y apellido para continuar.');if(!S.consent)return err('Para continuar, marcá la casilla de aceptación.');if(invInfo&&invInfo.puesto)S.puesto=invInfo.puesto;if(!S.t.d0)S.t.d0=now();return go('disc',0)}
+ if(a==='rank'){const f=b.dataset.f;if(tmp[f])return;const n=4-Object.keys(tmp).length;tmp[f]=n;if(n===2){const last=rankKeys().find(x=>!tmp[x]);tmp[last]=1}err('');return renderCandidate()}
+ if(a==='reRank'){tmp={};(S.step==='lidA'?S.lid:S.disc)[S.i]=null;save();return renderCandidate()}
+ if(a==='rankNext'){if(Object.keys(tmp).length<4)return err('Ordená las cuatro opciones para continuar.');
+  if(S.step==='disc'){S.disc[S.i]={...tmp};if(S.i<ND-1)return go('disc',S.i+1);S.t.d1=now();return go('trans')}
+  S.lid[S.i]={...tmp};if(S.i<NL-1)return go('lidA',S.i+1);return go('lidB',0)}
+ if(a==='toA'){if(!S.t.i0)S.t.i0=now();return go('imlA',0)}
+ if(a==='toL'){if(!S.t.l0)S.t.l0=now();return go('lidA',0)}
+ if(a==='triM'||a==='triL'){const k=+b.dataset.k,cur={...(S.imlA[S.i]||{})};if(a==='triM'){cur.m=k;if(cur.l===k)delete cur.l}else{cur.l=k;if(cur.m===k)delete cur.m}S.imlA[S.i]=cur;save();err('');return renderCandidate()}
+ if(a==='aNext'){const c=S.imlA[S.i];if(!c||c.m==null||c.l==null)return err('Marcá una frase como Más y otra como Menos.');return S.i<NA-1?go('imlA',S.i+1):go('imlB',0)}
+ if(a==='lik'){const k=+b.dataset.k,vals=S.step==='lidB'?S.lidB:S.imlB;vals[k]=+b.dataset.v;save();const row=$('#lk'+k);row.classList.remove('missing');row.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));err('');return}
+ if(a==='likNext'){const L=S.step==='lidB',order=L?S.lbOrder:S.bOrder,vals=L?S.lidB:S.imlB,pages=L?LBP:BP;
+  const ids=order.slice(S.i*BPAGE,S.i*BPAGE+BPAGE),miss=ids.filter(k=>vals[k]==null);if(miss.length){miss.forEach(k=>$('#lk'+k).classList.add('missing'));return err(miss.length===1?'Falta responder una frase.':`Faltan responder ${miss.length} frases.`)}
+  if(S.i<pages-1)return go(S.step,S.i+1);
+  if(!L){S.t.i1=now();return go('trans2')}
+  S.t.l1=now();S.code=encode(S);go('fin');return enviar()}
+ if(a==='back'){const st=S.step,i=S.i;
+  if(st==='disc')return i>0?go('disc',i-1):go('inicio');
+  if(st==='trans')return go('disc',ND-1);
+  if(st==='imlA')return i>0?go('imlA',i-1):go('trans');
+  if(st==='imlB')return i>0?go('imlB',i-1):go('imlA',NA-1);
+  if(st==='trans2')return go('imlB',BP-1);
+  if(st==='lidA')return i>0?go('lidA',i-1):go('trans2');
+  if(st==='lidB')return i>0?go('lidB',i-1):go('lidA',NL-1)}
+ if(a==='resend')return enviar();
+ if(a==='copy')return copyText(S.code);
+ if(a==='demo')return go('demo');
+ if(a==='restart'){S=fresh();save();return renderCandidate()}
+});
+function copyText(t){const m=$('#copyMsg');const ok=()=>{if(m)m.textContent='Código copiado.'};const fail=()=>{const el=$('#code');if(el){const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)}if(m)m.textContent='Seleccionado: copialo con Ctrl+C o mantené presionado.'};try{navigator.clipboard.writeText(t).then(ok,fail)}catch(e){fail()}}
+
+/* ---------- conexión con la planilla de Google ---------- */
+function gsr(fn,...args){return new Promise((ok,fail)=>{try{google.script.run.withSuccessHandler(ok).withFailureHandler(fail)[fn](...args)}catch(e){fail(e)}})}
+async function enviar(){
+ if(PREVIEW){S.sent=true;save();return renderCandidate()}
+ if(S.sent)return renderCandidate();
+ sending=true;sendErr='';renderCandidate();
+ try{const envio={inv:INV,nombre:S.nombre.trim(),correo:S.email.trim(),codigo:S.code};
+  let out;
+  if(WEB){const res=await fetch(CONFIG.API,{method:'POST',body:JSON.stringify(envio)});out=await res.json()}
+  else out=await gsr('recibirEvaluacion',envio);
+  if(out&&out.ok){S.sent=true;save()}else{sendErr=out&&out.motivo==='vencida'?'La invitación venció antes del envío.':'El servidor no confirmó la recepción.'}
+ }catch(e){sendErr='Hubo un problema de conexión.'}
+ sending=false;renderCandidate();
+}
+async function init(){
+ if(PREVIEW){$('#previewNote').hidden=false;S=load()||fresh();gate='ok';invInfo={nombre:'',puesto:''};return renderCandidate()}
+ if(WEB){setParams(PRE.params);S=load()||fresh();gate='ok';invInfo=PRE.inv||{};if(!S.nombre&&invInfo.nombre)S.nombre=invInfo.nombre;if(invInfo.puesto)S.puesto=invInfo.puesto;return renderCandidate()}
+ renderCandidate();
+ const params=await new Promise(res=>{try{google.script.url.getLocation(loc=>res(loc.parameter||{}))}catch(e){res({})}});
+ setParams(params);S=load()||fresh();
+ if(MODE==='informe')return initReport();
+ if(!INV){gate='sin';return renderCandidate()}
+ if(S.sent){gate='ok';invInfo={};return renderCandidate()}
+ try{const r=await gsr('verificarInvitacion',INV);if(r.ok){gate='ok';invInfo={nombre:r.nombre,puesto:r.puesto};if(!S.nombre&&r.nombre)S.nombre=r.nombre;if(r.puesto)S.puesto=r.puesto}else gate=r.motivo||'no_existe'}
+ catch(e){gate='red'}
+ renderCandidate();
+}
+
+/* ---------- código ---------- */
+const b64e=s=>{const by=new TextEncoder().encode(s);let bin='';by.forEach(x=>bin+=String.fromCharCode(x));return btoa(bin).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')};
+function encode(st){
+ let body='';
+ st.disc.forEach(r=>{const key=F.map(f=>r[f]).join(',');body+=ALPH[PERMS.findIndex(p=>p.join(',')===key)]});
+ st.imlA.forEach(a=>{body+=ALPH[PAIRS.findIndex(p=>p[0]===a.m&&p[1]===a.l)]});
+ for(let k=0;k<NB;k+=2)body+=ALPH[st.imlB[k]*5+st.imlB[k+1]];
+ st.lid.forEach(r=>{const key=L4.map(f=>r[f]).join(',');body+=ALPH[PERMS.findIndex(p=>p.join(',')===key)]});
+ for(let k=0;k<NLB;k+=2)body+=ALPH[st.lidB[k]*5+st.lidB[k+1]];
+ const tD=Math.max(0,st.t.d1-st.t.d0),tI=Math.max(0,st.t.i1-st.t.i0),tL=Math.max(0,st.t.l1-st.t.l0);
+ const meta=b64e(JSON.stringify([st.nombre.trim(),(st.puesto||'').trim(),st.email.trim(),new Date().toISOString().slice(0,10)]));
+ const s='VC2.'+body+'.'+tD.toString(36)+'.'+tI.toString(36)+'.'+tL.toString(36)+'.'+meta;
+ return s+'.'+sum(s);
+}
+
+
+init();
+}
+</script>
+<script>
+(function(){
+ var app=document.getElementById('app');
+ var p=Object.fromEntries(new URLSearchParams(location.search));
+ var inv=String(p.inv||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+ var G={cargando:['Un momento','Estamos verificando tu invitación.'],
+  sin:['Acceso solo por invitación','Esta evaluación se realiza con una invitación personal de Vital Care. Si estás participando de un proceso de selección, usá el link que te enviaron por correo.'],
+  no_existe:['Invitación no válida','No encontramos esta invitación. Revisá que el link esté completo o pedí uno nuevo a quien te lo envió.'],
+  completada:['Evaluación ya completada','Esta invitación ya fue utilizada. Tus respuestas fueron recibidas por Vital Care. ¡Gracias!'],
+  vencida:['Invitación vencida','El plazo de esta invitación terminó. Si todavía necesitás completar la evaluación, pedí un link nuevo.'],
+  anulada:['Invitación no disponible','Esta invitación fue desactivada. Consultá con quien te la envió.'],
+  red:['No pudimos conectarnos','Revisá tu conexión a internet y volvé a cargar la página.']};
+ function msg(k){var t=G[k]||G.no_existe;app.innerHTML='<section class="card stack center"><div class="seal" aria-hidden="true"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="9" y="18" width="22" height="16" rx="2" fill="none" stroke="#b0d9ca" stroke-width="2"/><path d="M14 18v-5a6 6 0 0 1 12 0v5" fill="none" stroke="#b0d9ca" stroke-width="2"/></svg></div><h2>'+t[0]+'</h2><div class="rule"></div><p class="muted" style="max-width:46ch">'+t[1]+'</p><div class="contact" style="text-align:left"><span>WhatsApp</span><span>341 350-8828</span><span>Correo</span><span>vitalcare.evaluaciones@gmail.com</span></div></section>'}
+ if(!inv)return msg('sin');
+ if(!CONFIG.API)return msg('red');
+ msg('cargando');
+ fetch(CONFIG.API+'?accion=preguntas&inv='+encodeURIComponent(inv)).then(function(r){return r.json()}).then(function(r){
+  if(!r.ok)return msg(r.motivo);
+  __main(r.data,{params:p,inv:{nombre:r.nombre,puesto:r.puesto}});
+ }).catch(function(){msg('red')});
+})();
+</script>
+
+</body>
+</html>
